@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Hastaneuygulama.Migrations
+namespace HastaneRandevuSistemi.Migrations
 {
-    public partial class TumTablolarEklendi : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -57,7 +57,8 @@ namespace Hastaneuygulama.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Ad = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false)
+                    Ad = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
+                    AdEng = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -179,6 +180,7 @@ namespace Hastaneuygulama.Migrations
                     DoktorAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Poliklinik = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Calisma = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CalismaEng = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DoktorBransId = table.Column<int>(type: "int", nullable: true),
                     ResimUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
