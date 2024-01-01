@@ -1,5 +1,5 @@
-﻿using Hastaneuygulama.Utility;
-namespace Hastaneuygulama.Models
+﻿using HastaneRandevuSistemi.Utility;
+namespace HastaneRandevuSistemi.Models
 {
     public class DoktorBransRepository : Repository<DoktorBrans>, IDoktorBransRepository//önce concrete sınıflar, sonra abstract sınıflar yazılır.
 

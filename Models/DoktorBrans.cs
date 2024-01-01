@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 
-namespace Hastaneuygulama.Models
+namespace HastaneRandevuSistemi.Models
 {
     public class DoktorBrans
     {

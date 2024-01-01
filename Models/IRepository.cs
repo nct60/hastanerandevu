@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Hastaneuygulama.Models
+namespace HastaneRandevuSistemi.Models
 {
     public interface IRepository<T> where T : class
     {

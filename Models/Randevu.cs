@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 
-namespace Hastaneuygulama.Models
+namespace HastaneRandevuSistemi.Models
 {
     public class Randevu
     {

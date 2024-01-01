@@ -1,5 +1,5 @@
-﻿using Hastaneuygulama.Utility;
-namespace Hastaneuygulama.Models
+﻿using HastaneRandevuSistemi.Utility;
+namespace HastaneRandevuSistemi.Models
 {
     public class RandevuRepository : Repository<Randevu>, IRandevuRepository //önce concrete sınıflar, sonra abstract sınıflar yazılır.
 

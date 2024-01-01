@@ -10,7 +10,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
-using Hastaneuygulama.Models;
+using HastaneRandevuSistemi.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -20,7 +20,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 
-namespace Hastaneuygulama.Areas.Identity.Pages.Account
+namespace HastaneRandevuSistemi.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
     {
@@ -181,7 +181,7 @@ namespace Hastaneuygulama.Areas.Identity.Pages.Account
         {
             try
             {
-                return Activator.CreateInstance<Hastaneuygulama.Models.ApplicationUser>();
+                return Activator.CreateInstance<HastaneRandevuSistemi.Models.ApplicationUser>();
             }
             catch
             {

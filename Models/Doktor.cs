@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 
-namespace Hastaneuygulama.Models
+namespace HastaneRandevuSistemi.Models
 {
     public class Doktor
     {
@@ -13,7 +13,7 @@ namespace Hastaneuygulama.Models
 
         [Required]
         [DisplayName("Doktor Adı-Soyadı:")]
-        public  string DoktorAdi { get; set; }
+        public required string DoktorAdi { get; set; }
 
 
         [DisplayName("Poliklinik:")]
@@ -23,12 +23,12 @@ namespace Hastaneuygulama.Models
 
         [Required]
         [DisplayName("Çalışma Günleri-Saatleri:")]
-        public  string Calisma { get; set; }
+        public required string Calisma { get; set; }
 
 
         [Required]
         [DisplayName("Working Days-Hours:")]
-        public  string CalismaEng { get; set; }
+        public required string CalismaEng { get; set; }
 
 
         [DisplayName("Branşı:")]

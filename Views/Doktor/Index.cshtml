@@ -1,0 +1,160 @@
+﻿@using HastaneRandevuSistemi.Utility;
+@model List<Doktor>
+
+@{
+    ViewData["Title"] = "Doktorlar";
+}
+
+@if (User.IsInRole(UserRoles.Role_Admin))
+{
+    if (TempData["basarili"] != null)
+    {
+        <h2 style="color:forestgreen">@TempData["basarili"]</h2>
+    }
+
+}
+
+@if (User.IsInRole(UserRoles.Role_Hasta))
+{
+    if (TempData["basarili1"] != null)
+    {
+        <h2 style="color:forestgreen">@TempData["basarili1"]</h2>
+    }
+}
+
+<div class="container">
+    <div class="row pt-3 pb-4">
+        <div>
+            <h1 class="text-primary"> @_localization.Getkey("Doktorlar").Value</h1>
+        </div>
+    </div>
+
+    <table class="table table-bordered">
+
+        <thead>
+
+
+            <tr>
+
+                <th class="text-primary">
+                    @_localization.Getkey("Doktorlar").Value
+                </th>
+
+                @if (User.IsInRole(UserRoles.Role_Admin))
+                {
+                    <th class="text-primary">
+                        id
+                    </th>
+                }
+                <th class="text-primary">
+                    @_localization.Getkey("Doktor Adı").Value
+                </th>
+
+                <th class="text-primary">
+                    @_localization.Getkey("Poliklinik").Value
+                </th>
+
+                <th class="text-primary">
+                    @_localization.Getkey("Çalışma Gün ve Saatleri").Value
+                </th>
+
+                <th class="text-primary">
+                    @_localization.Getkey("Branşı").Value
+                </th>
+                @if (User.IsInRole(UserRoles.Role_Hasta))
+                {
+                    <th class="text-primary">
+                        @_localization.Getkey("Randevu Al").Value
+                    </th>
+                }
+
+                @if (User.IsInRole(UserRoles.Role_Admin))
+                {
+                    <th style="color:forestgreen">
+                        @_localization.Getkey("Güncelle").Value
+                    </th>
+
+                    <th class="text-danger">
+                        @_localization.Getkey("Sil").Value
+                    </th>
+                }
+
+            </tr>
+
+
+        </thead>
+
+
+        <tbody>
+            @foreach (var doktor in Model)
+            {
+
+
+                <tr>
+                    <td align="center" valign="middle">
+                        <img src="@doktor.ResimUrl"
+                             style="border-radius:7px; border:3px solid #bbb9b9;
+                               max-width:145px; max:275px;" />
+                    </td>
+                    @if (User.IsInRole(UserRoles.Role_Admin))
+                    {
+                        <td>@doktor.Id</td>
+                    }
+                    <td align="center" valign="middle">@doktor.DoktorAdi</td>
+                    <td align="center" valign="middle">@doktor.Poliklinik</td>
+                    <td align="center" valign="middle">
+                        @if (Thread.CurrentThread.CurrentCulture.Name.ToString() == "en-US")
+                        {
+                            @doktor.CalismaEng
+                        }
+                        else{
+                            @doktor.Calisma
+                            }
+                                              
+                    </td>
+                    <td align="center" valign="middle">
+                        @if (Thread.CurrentThread.CurrentCulture.Name.ToString() == "en-US")
+                        {
+                            @doktor.DoktorBrans?.AdEng
+                        }
+                        else
+                        {
+                            @doktor.DoktorBrans?.Ad
+                        }
+                       
+                        </td>
+                    @if (User.IsInRole(UserRoles.Role_Hasta))
+                    {
+                        <td align="center" valign="middle">
+                            <a asp-controller="Randevu" asp-action="RandevuAl" asp-route-id="@doktor.Id" type="button" class="btn btn-success btn-sm"> @_localization.Getkey("Randevu Al").Value</a>
+                        </td>
+                    }
+
+                    @if (User.IsInRole(UserRoles.Role_Admin))
+                    {
+                        <td align="center" valign="middle">
+                            <a asp-controller="Doktor" asp-action="EkleGuncelle" asp-route-id="@doktor.Id" type="button" class="btn btn-success btn-sm">@_localization.Getkey("Güncelle").Value</a>
+                        </td>
+                        <td align="center" valign="middle">
+                            <a asp-controller="Doktor" asp-action="Sil" asp-route-id="@doktor.Id" type="button" class="btn btn-danger btn-sm"> @_localization.Getkey("Sil").Value</a>
+                        </td>
+                    }
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+    @if (User.IsInRole(UserRoles.Role_Admin))
+    {
+        <div class="row pt-3 pb-2">
+            <div>
+                <a asp-controller="Doktor" asp-action="EkleGuncelle" class="btn btn-lg btn-primary" type="button">@_localization.Getkey("Yeni Doktor Kaydı Oluştur").Value</a>
+            </div>
+        </div>
+     }
+
+
+
+</div>

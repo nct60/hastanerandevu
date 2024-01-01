@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace Hastaneuygulama.Models
+namespace HastaneRandevuSistemi.Models
 {
     public class ApplicationUser : IdentityUser
     {

@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Hastaneuygulama.Models
+namespace HastaneRandevuSistemi.Models
 {
     public interface IDoktorRepository : IRepository<Doktor> //extends
     {

@@ -14,9 +14,9 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using Hastaneuygulama.Services;
+using HastaneRandevuSistemi.Services;
 
-namespace Hastaneuygulama.Areas.Identity.Pages.Account
+namespace HastaneRandevuSistemi.Areas.Identity.Pages.Account
 {
     public class LoginModel : PageModel
     {

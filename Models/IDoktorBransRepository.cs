@@ -1,4 +1,4 @@
-﻿namespace Hastaneuygulama.Models
+﻿namespace HastaneRandevuSistemi.Models
 {
     public interface IDoktorBransRepository : IRepository<DoktorBrans> //extends
     {

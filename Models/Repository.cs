@@ -1,8 +1,8 @@
-﻿using Hastaneuygulama.Utility;
+﻿using HastaneRandevuSistemi.Utility;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace Hastaneuygulama.Models
+namespace HastaneRandevuSistemi.Models
 {
     public class Repository<T> : IRepository<T> where T : class
     {

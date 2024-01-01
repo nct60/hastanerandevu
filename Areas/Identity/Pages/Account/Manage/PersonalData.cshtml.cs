@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace Hastaneuygulama.Areas.Identity.Pages.Account.Manage
+namespace HastaneRandevuSistemi.Areas.Identity.Pages.Account.Manage
 {
     public class PersonalDataModel : PageModel
     {
